@@ -1,0 +1,18 @@
+" Used to be an example for a vimrc file.
+"
+" Maintainer: Ondrej Podsztavek
+
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" indentation without hard tabs
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+" write the contents of the file, if it has been modified
+set autowrite
+
+" precede each line with its line number
+set number
