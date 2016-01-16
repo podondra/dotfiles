@@ -22,3 +22,6 @@ set autowrite
 
 " precede each line with its line number
 set number
+
+" highlight textwitdth + 1 column
+set colorcolumn=+1
