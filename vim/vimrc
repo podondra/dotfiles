@@ -12,10 +12,8 @@ set nocompatible
 " Also load indent files, to automatically do language-dependent indenting.
 filetype plugin indent on
 
-" indentation without hard tabs
+" use spaces instead of tabs
 set expandtab
-set shiftwidth=2
-set softtabstop=2
 
 " write the contents of the file, if it has been modified
 set autowrite
