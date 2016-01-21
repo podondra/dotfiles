@@ -1,0 +1,16 @@
+[user]
+	name = Ondrej Podsztavek
+	email = ondrej.podsztavek@gmail.com
+[color]
+	ui = auto
+[push]
+	default = simple
+[core]
+	editor = vim
+	excludesfile = /home/ondrej/.gitignore_global
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	ll = log --oneline --graph --all --decorate
