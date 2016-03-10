@@ -1,25 +1,44 @@
-" Used to be an example for a vimrc file.
-"
-" Maintainer: Ondrej Podsztavek
+" Author: Ondrej Podsztavek
 
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
+" disable Vi compatibility
 set nocompatible
 
-" Enable file type detection.
-" Use the default filetype settings, so that mail gets 'tw' set to 72,
-" 'cindent' is on in C files, etc.
-" Also load indent files, to automatically do language-dependent indenting.
+" in Insert mode allow th <BS> to delete character
+set backspace=indent,eol,start
+
+" use the indent of the previous line for a newly created line
+set autoindent
+
+" display the current cursor position in the lower right corner
+set ruler
+" display an incomplete command in the lower right corner
+set showcmd
+" display the current mode in the lower left corner
+set showmode
+
+" dispaly the match for a search pattern when halfway typing it
+set incsearch
+
+" switch on syntax highlighting and highlight matches with the last used
+" search patter, but only if colors are available
+if &t_Co > 2
+  syntax on
+  set hlsearch
+endif
+
+" switch on filetype detection
+" use filetype plugin files
+" use indent files
 filetype plugin indent on
-
-" use spaces instead of tabs
-set expandtab
-
-" write the contents of the file, if it has been modified
-set autowrite
 
 " precede each line with its line number
 set number
 
-" highlight textwitdth + 1 column
-set colorcolumn=+1
+" number of spaces that a <Tab> count for while performing editing operation,
+" like inserting a <Tab> or using <BS>
+set softtabstop=4
+" number of spaces to use for each step of (auto)indent
+" used for 'cindent', >>, <<, etc.
+set shiftwidth=4
+" in Insert mode use the appropriate number of spaces to inser a <Tab>
+set expandtab
