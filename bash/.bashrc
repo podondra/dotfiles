@@ -32,7 +32,7 @@ shopt -s progcomp
 
 # primary prompt string
 case ${TERM} in
-	screen|*color)
+	screen|*color|xterm)
 		PS1='\u@\h \[\e[01;32m\]\w\[\e[0m\] \$ '
 		;;
 	*)
