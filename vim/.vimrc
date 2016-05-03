@@ -42,3 +42,6 @@ set softtabstop=4
 set shiftwidth=4
 " in Insert mode use the appropriate number of spaces to inser a <Tab>
 set expandtab
+
+" write the contents of the file, if it has been modified
+set autowrite
