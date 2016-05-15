@@ -44,7 +44,6 @@ esac
 # it should be better to write them as functions
 l () { ls --almost-all --classify --human-readable -l "$@"; }
 # taken from https://wiki.gentoo.org/wiki/Bash
-rm () { command rm -i "$@"; }
 cp () { command cp -i "$@"; }
 mv () { command mv -i "$@"; }
 
