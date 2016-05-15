@@ -43,9 +43,3 @@ esac
 # Aliases
 # it should be better to write them as functions
 l () { ls --almost-all --classify --human-readable -l "$@"; }
-# taken from https://wiki.gentoo.org/wiki/Bash
-cp () { command cp -i "$@"; }
-mv () { command mv -i "$@"; }
-
-# source autojump only if it exists
-[ -e /etc/profile.d/autojump.sh ] && source /etc/profile.d/autojump.sh
