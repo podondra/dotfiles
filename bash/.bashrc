@@ -42,4 +42,4 @@ esac
 
 # Aliases
 # it should be better to write them as functions
-l () { ls --almost-all --classify --human-readable -l "$@"; }
+function l { ls --almost-all --classify --human-readable -l "$@"; }
