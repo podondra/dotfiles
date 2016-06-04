@@ -41,5 +41,6 @@ case ${TERM} in
 esac
 
 # Aliases
-# it should be better to write them as functions
-function l { ls --almost-all --classify --human-readable -l "$@"; }
+alias l='ls -alF'
+alias la='ls -la'
+alias ll='ls -l'
