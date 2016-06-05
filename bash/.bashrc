@@ -33,14 +33,14 @@ shopt -s progcomp
 # primary prompt string
 case ${TERM} in
 	screen|*color|xterm)
-		PS1='\u@\h \[\e[01;32m\]\w\[\e[0m\] \$ '
+		PS1='\u@\h:\[\e[01;32m\]\w\[\e[0m\]\$ '
 		;;
 	*)
-		PS1='\u@\h \w \$ '
+		PS1='\u@\h:\w\$ '
 		;;
 esac
 
 # Aliases
-alias l='ls -alF'
+alias l='ls -l'
+alias ll='ls -alF'
 alias la='ls -la'
-alias ll='ls -l'
