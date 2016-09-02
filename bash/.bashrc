@@ -42,5 +42,4 @@ esac
 
 # Aliases
 alias l='ls -l'
-alias ll='ls -alF'
-alias la='ls -la'
+alias ll='ls -laF'
