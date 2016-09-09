@@ -1,0 +1,24 @@
+[email]
+; in case you want to send patches directly from the hg command line into
+; your mailbox or to alias without pushing them to repository (e.g. for review)
+; it is wise to set mail form field to your address so the reviewer can reply
+from = ondrej.podsztavek@oracle.com
+
+[extensions]
+; enable mercurial patch queues extension
+mq =
+; when using mercurial patch queues disable pull and push commands when
+; patches are applied
+prechangegroup.mq-no-pull = ! hg qtop > /dev/null 2>&1
+preoutgoing.mq-no-push = ! hg qtop > /dev/null 2>&1
+; enable mercurial color extension
+color =
+; enable mercurial histedit extension
+histedit =
+; enable mercurial rebase extension
+rebase =
+
+[ui]
+username = Ondrej Podsztavek <ondrej.podsztavek@oracle.com>
+; tell hg to be verbose during operations
+verbose = True
