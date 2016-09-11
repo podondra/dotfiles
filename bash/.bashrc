@@ -8,9 +8,9 @@
 # Test for an interactive shell. There is no need to set anything
 # past this point for scp and rcp, and it's important to refrain from
 # outputting anything in those cases.
-if [[ $- != *i* ]] ; then
-	# Shell is non-interactive. Be done now!
-	return
+if [[ $- != *i* ]]; then
+    # Shell is non-interactive. Be done now!
+    return
 fi
 
 # Put your fun stuff here.
@@ -31,15 +31,34 @@ shopt -s extglob
 shopt -s progcomp
 
 # primary prompt string
-case ${TERM} in
-	screen|*color|xterm)
-		PS1='\u@\h:\[\e[01;32m\]\w\[\e[0m\]\$ '
-		;;
-	*)
-		PS1='\u@\h:\w\$ '
-		;;
+PS1="\u@\h:"
+case "$TERM" in
+    screen|*color|xterm)
+	PS1="$PS1\[\e[32m\]\w\[\e[0m\]"
+	;;
+    *)
+	PS1="$PS1:\w"
+	;;
 esac
 
-# Aliases
+# aliases
 alias l='ls -l'
 alias ll='ls -laF'
+
+# git completion
+GIT_COMPLETION=~/.git-completion.bash
+[[ -f "$GIT_COMPLETION" ]] && source "$GIT_COMPLETION"
+
+# git prompt
+GIT_PROMPT=~/.git-prompt.sh
+if [[ -f "$GIT_PROMPT" ]]; then
+    source "$GIT_PROMPT"
+    PROMPT_COMMAND="__git_ps1 \"$PS1\" \"\\\$ \""
+    GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWSTASHSTATE=1
+    GIT_PS1_SHOWUNTRACKEDFILES=1
+    GIT_PS1_SHOWUPSTREAM="auto"
+    GIT_PS1_SHOWCOLORHINTS=1
+else
+    PS1="$PS1\$ "
+fi
