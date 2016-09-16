@@ -53,7 +53,7 @@ GIT_COMPLETION=~/.git-completion.bash
 GIT_PROMPT=~/.git-prompt.sh
 if [[ -f "$GIT_PROMPT" ]]; then
     source "$GIT_PROMPT"
-    PROMPT_COMMAND="__git_ps1 \"$PS1\" \"\\\$ \""
+    PS1=$PS1'$(__git_ps1 " (%s)")\$ '
     GIT_PS1_SHOWDIRTYSTATE=1
     GIT_PS1_SHOWSTASHSTATE=1
     GIT_PS1_SHOWUNTRACKEDFILES=1
