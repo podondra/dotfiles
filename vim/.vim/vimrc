@@ -31,9 +31,6 @@ endif
 " use indent files
 filetype plugin indent on
 
-" precede each line with its line number
-set number
-
 " number of spaces that a <Tab> count for while performing editing operation,
 " like inserting a <Tab> or using <BS>
 set softtabstop=4
