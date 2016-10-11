@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/podondra/pjp/llvm-sfe/code-samples'
-let g:netrw_dirhist_2='/home/podondra/pjp/llvm-sfe/src'
-let g:netrw_dirhist_3='/home/podondra/pjp/llvm-sfe/code-samples'
-let g:netrw_dirhist_4='/home/podondra/retot/retot-django/retot_api/migrations'
-let g:netrw_dirhist_5='/home/podondra/retot/retot-django/retot_api'
-let g:netrw_dirhist_6='/home/podondra/retot/retot-django/retot_api/api'
-let g:netrw_dirhist_7='/home/podondra/retot/.git'
