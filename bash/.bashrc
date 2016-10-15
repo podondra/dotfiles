@@ -42,8 +42,10 @@ case "$TERM" in
 esac
 
 # aliases
-alias l='ls -l'
-alias ll='ls -laF'
+alias ls='ls -h --color'
+alias lk='ls -lSr' # sort by size
+alias ll="ls -lv --group-directories-first"
+alias la='ll -A' # show hidden files
 
 # git completion
 GIT_COMPLETION=~/.git-completion.bash
