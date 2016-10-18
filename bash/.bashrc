@@ -41,11 +41,19 @@ case "$TERM" in
 	;;
 esac
 
-# aliases
-alias ls='ls -h --color'
-alias lk='ls -lSr' # sort by size
-alias ll="ls -lv --group-directories-first"
-alias la='ll -A' # show hidden files
+if [ -x /usr/bin/dircolors ]; then
+    eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias l='ls -CF'
+alias ll='l -hl'
+alias la='ll -A'
 
 # git completion
 GIT_COMPLETION=~/.git-completion.bash

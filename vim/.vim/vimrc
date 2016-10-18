@@ -42,3 +42,6 @@ set expandtab
 
 " write the contents of the file, if it has been modified
 set autowrite
+
+" maximum width of text that is being inserted
+set textwidth=79
