@@ -13,7 +13,20 @@ if [[ $- != *i* ]]; then
     return
 fi
 
-# Put your fun stuff here.
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 # save multiple-line command to the history with embeded newlines in 
 # the same history entry
@@ -30,15 +43,18 @@ shopt -s extglob
 # enable programmable completion facilities
 shopt -s progcomp
 
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
 # primary prompt string
 PS1="\u@\h:"
 case "$TERM" in
     screen|*color|xterm)
-	PS1="$PS1\[\e[32m\]\w\[\e[0m\]"
-	;;
+        PS1="$PS1\[\e[32m\]\w\[\e[0m\]"
+        ;;
     *)
-	PS1="$PS1:\w"
-	;;
+        PS1="$PS1:\w"
+        ;;
 esac
 
 if [ -x /usr/bin/dircolors ]; then
@@ -54,6 +70,10 @@ fi
 alias l='ls -CF'
 alias ll='l -hl'
 alias la='ll -A'
+# Add an "alert" alias for long running commands.  Use like so: sleep 10; alert
+alias alert='notify-send --urgency=low \
+    -i "$([ $? = 0 ] && echo terminal || echo error)" \
+    "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # git completion
 GIT_COMPLETION=~/.git-completion.bash
@@ -71,4 +91,15 @@ if [[ -f "$GIT_PROMPT" ]]; then
     GIT_PS1_SHOWCOLORHINTS=1
 else
     PS1="$PS1\$ "
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        source /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        source /etc/bash_completion
+    fi
 fi
