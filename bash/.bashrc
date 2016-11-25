@@ -43,9 +43,6 @@ shopt -s extglob
 # enable programmable completion facilities
 shopt -s progcomp
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 # primary prompt string
 PS1="\u@\h:"
 case "$TERM" in
