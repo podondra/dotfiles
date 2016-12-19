@@ -44,4 +44,7 @@ set expandtab
 set autowrite
 
 " maximum width of text that is being inserted
-set textwidth=79
+set textwidth=80
+
+" comma separated list of screen columns that are highlighted
+set colorcolumn=78,79,80

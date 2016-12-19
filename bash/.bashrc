@@ -100,3 +100,5 @@ if ! shopt -oq posix; then
         source /etc/bash_completion
     fi
 fi
+
+export EDITOR='vim'
