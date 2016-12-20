@@ -4,6 +4,9 @@
 ; it is wise to set mail form field to your address so the reviewer can reply
 from = ondrej.podsztavek@oracle.com
 
+[pager]
+pager = LESS='FRX' less
+
 [extensions]
 ; enable mercurial patch queues extension
 mq =
@@ -17,6 +20,8 @@ color =
 histedit =
 ; enable mercurial rebase extension
 rebase =
+; enable pager
+pager =
 
 [ui]
 username = Ondrej Podsztavek <ondrej.podsztavek@oracle.com>
