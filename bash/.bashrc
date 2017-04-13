@@ -65,7 +65,7 @@ fi
 
 # some more ls aliases
 alias l='ls -CF'
-alias ll='l -hl'
+alias ll='l -hl --group-directories-first'
 alias la='ll -A'
 # Add an "alert" alias for long running commands.  Use like so: sleep 10; alert
 alias alert='notify-send --urgency=low \
