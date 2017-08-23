@@ -1,0 +1,38 @@
+# native imap support
+set imap_user = 'ondrej.podsztavek@gmail.com'
+# source gpg encrypted passwords
+# create with $ gpg --recipient USER-ID --encrypt FILE
+# USER-ID is in output of gpg --decrypt FILE.gpg
+source "gpg -dq ~/.mutt/passwords.gpg |"
+
+# define the '=' shortcut and the entry point for the folder browser (c?)
+set folder = 'imaps://imap.gmail.com/'
+set record = ''
+set postponed = '+[Gmail]/Drafts'
+
+# automatically log into this mailbox at startup
+set spoolfile = '+INBOX'
+
+mailboxes '+INBOX'
+
+set header_cache = '~/.cache/mutt'
+set message_cachedir = '~/.cache/mutt'
+
+# native smtp support
+set realname = 'Ondrej Podsztavek'
+set edit_headers = yes
+
+set smtp_url = 'smtps://ondrej.podsztavek@smtp.gmail.com'
+
+# activate TLS if available on the server
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+# set editor
+set editor = 'vim'
+
+# mail aliases
+set alias_file = '~/.mutt/aliases'
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
