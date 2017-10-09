@@ -7,7 +7,7 @@
 	default = simple
 [core]
 	editor = vim
-	excludesfile = /home/ondrej/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [alias]
 	st = status
 	ci = commit
