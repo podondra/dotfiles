@@ -64,6 +64,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+alias activate='source venv/bin/activate'
 alias l='ls -CF'
 alias ll='l -hl --group-directories-first'
 alias la='ll -A'
