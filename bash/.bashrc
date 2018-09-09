@@ -132,3 +132,7 @@ if [ -f ~/.git-prompt.sh ]; then
 else
 	PS1="$PS1\$ "
 fi
+
+# install ruby gems to ~/gems
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
