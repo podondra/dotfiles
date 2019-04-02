@@ -116,13 +116,9 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-# git completion and prompt
-if [ -f ~/.git-completion.bash ]; then
-	. ~/.git-completion.bash
-fi
-
-if [ -f ~/.git-prompt.sh ]; then
-	. ~/.git-prompt.sh
+# bash git prompt support
+if [ -f ~/git-prompt.sh ]; then
+	. ~/git-prompt.sh
 	PS1=$PS1'$(__git_ps1 " (%s)")\$ '
 	GIT_PS1_SHOWDIRTYSTATE=1
 	GIT_PS1_SHOWSTASHSTATE=1
